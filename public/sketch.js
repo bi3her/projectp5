@@ -1,13 +1,29 @@
 let RGB = [0,0,0];
 let dia = 50;
 var socket;
+
+
+requirejs.config({
+	//By default load any module IDs from js/lib
+	baseUrl: 'P5Project',
+	//except, if the module ID starts with "app",
+	//load it from the js/app directory. paths
+	//config is relative to the baseUrl, and
+	//never includes a ".js" extension since
+	//the paths config could be for a directory.
+	paths: {
+		app: 'public/sketch'
+	}
+});
 function setup() {
 	createCanvas(windowWidth, windowHeight);
 	background(50, 255, 50)
+		requirejs(["server"], function(server){
+			socket = io.connect('http://localhost:' + server.port);
+		});
 
-require(["port"], function (port){
 		socket = io.connect('http://localhost:' + port);
-});
+
 	socket = io.connect('http://localhost:'+ port);
 	socket.on('draw', newDrawing);
 }
