@@ -5,8 +5,8 @@ function setup() {
 	createCanvas(windowWidth, windowHeight);
 	background(50, 255, 50)
 
-	let server = require("server.js")
-	socket = io.connect('http://localhost:'+ server.port);
+	import { port } from 'public/server.js'
+	socket = io.connect('http://localhost:'+ port);
 	socket.on('draw', newDrawing);
 }
 function newDrawing(drawData){
