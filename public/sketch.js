@@ -65,3 +65,31 @@ function mousePressed(){
 		RGB = [get(mouseX, mouseY)[0], get(mouseX, mouseY)[1], get(mouseX, mouseY)[2]]
 	}
 }
+function keyTyped(){
+	switch (key.toLowerCase()){
+		case "w":
+			RGB = [255, 255, 255];
+			break;
+		case "b":
+			RGB = [0, 25, 210];
+			break;
+		case "c":
+			RGB = [0, 255, 255];
+			break;
+		case "r":
+			RGB = [255, 0,0];
+			break;
+		case "p":
+			RGB = [114, 0, 213];
+			break;
+		case "y":
+			RGB = [255, 255, 0];
+			break;
+		case "o":
+			RGB = [255, 128, 0];
+			break;
+		case "g":
+			RGB = [0, 200, 20];
+			break;
+	}
+}

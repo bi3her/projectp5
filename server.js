@@ -18,5 +18,6 @@ socket.on('draw', drawEvent);
 function drawEvent(drawData){
     socket.broadcast.emit('draw', drawData);
 }
+
 }
 module.exports = {port};
