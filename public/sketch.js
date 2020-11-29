@@ -1,7 +1,7 @@
 let RGB = [0,0,0];
 let dia = 50;
 var socket;
-import {port} from '../server.js'
+//import {port} from '../server.js';
 
 //requirejs.config({
 	//By default load any module IDs from js/lib
@@ -16,14 +16,12 @@ import {port} from '../server.js'
 	//}
 //});
 function setup() {
+	import {port} from '../server.js';
+
 	createCanvas(windowWidth, windowHeight);
 	background(50, 255, 50)
 	//	requirejs(["server"], function(server){
-			socket = io.connect('http://localhost:' + server.port);
 	//	});
-
-		socket = io.connect('http://localhost:' + port);
-
 	socket = io.connect('http://localhost:'+ port);
 	socket.on('draw', newDrawing);
 }
