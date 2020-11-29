@@ -13,7 +13,8 @@ const io = socket(server);
 io.sockets.on('connection', newConnection);
 // function for the event
 function newConnection(socket){
-    console.log('new connection: ' + socket.id);
+
+  //console.log(socket.client)
 socket.on('draw', drawEvent);
 function drawEvent(drawData){
     socket.broadcast.emit('draw', drawData);
