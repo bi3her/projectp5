@@ -5,7 +5,7 @@ function setup() {
 	createCanvas(windowWidth, windowHeight);
 	background(50, 255, 50)
 
-	import { port } from 'public/server.js'
+const {port} = require('P5Project/server.js');
 	socket = io.connect('http://localhost:'+ port);
 	socket.on('draw', newDrawing);
 }
