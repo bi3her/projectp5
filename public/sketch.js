@@ -27,11 +27,11 @@ socket = io();
 	socket.on('draw', newDrawing);
 	socket.on('draw3', newDrawing3);
 }
-function newDrawing3(drawData){
+function newDrawing3(draw3Data){
 	for(let i = 0; i < 5; ++i){
 		noStroke();
-		fill(drawData.RGB[i].color[0], drawData.RGB[i].color[1], drawData.RGB[i].color[2])
-		ellipse(drawData.coords[i].xy[0], drawData.coords[i].xy[1], drawData.coords[i].dia2, drawData.coords[i].dia2);
+		fill(draw3Data.rgb[i].color[0], draw3Data.rgb[i].color[1], draw3Data.rgb[i].color[2])
+		ellipse(draw3Data.coords[i].xy[0], draw3Data.coords[i].xy[1], draw3Data.coords[i].dia2, draw3Data.coords[i].dia2);
 	}
 
 }
@@ -68,11 +68,11 @@ if(!colorfulMode) {
 		fill(RGB[i].color[0], RGB[i].color[1], RGB[i].color[2])
 		ellipse(coords[i].xy[0], coords[i].xy[1], coords[i].dia2, coords[i].dia2);
 	}
-	drawData = {
+	draw3Data = {
 		coords : coords,
 		rgb : RGB
 	}
-	socket.emit('draw3', drawData);
+	socket.emit('draw3', draw3Data);
 }
 }
 function mouseWheel(event){

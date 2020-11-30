@@ -16,9 +16,12 @@ function newConnection(socket){
 
   //console.log(socket.client)
 socket.on('draw', drawEvent);
-socket.on('draw3', drawData => {
-    socket.broadcast.emit('draw3', drawData)
-});
+socket.on('draw3', draw3Event);
+function draw3Event(draw3Data){
+
+        socket.broadcast.emit('draw3', draw3Data)
+
+}
 function drawEvent(drawData){
     socket.broadcast.emit('draw', drawData);
 }
