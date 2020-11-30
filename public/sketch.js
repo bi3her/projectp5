@@ -31,7 +31,7 @@ function newDrawing3(draw3Data){
 	for(let i = 0; i < 5; ++i){
 		noStroke();
 		fill(draw3Data.rgb[i].color[0], draw3Data.rgb[i].color[1], draw3Data.rgb[i].color[2])
-		ellipse(draw3Data.coords[i].xy[0], draw3Data.coords[i].xy[1], draw3Data.coords[i].dia2, draw3Data.coords[i].dia2);
+		ellipse(draw3Data.coords[i+1].xy[0], draw3Data.coords[i+1].xy[1], draw3Data.coords[0].dia2, draw3Data.coords[0].dia2);
 	}
 
 }
@@ -66,7 +66,7 @@ if(!colorfulMode) {
 		resetCoords();
 		noStroke();
 		fill(RGB[i].color[0], RGB[i].color[1], RGB[i].color[2])
-		ellipse(coords[i].xy[0], coords[i].xy[1], coords[i].dia2, coords[i].dia2);
+		ellipse(coords[i+1].xy[0], coords[i+1].xy[1], coords[0].dia2, coords[0].dia2);
 	}
 	draw3Data = {
 		coords : coords,
@@ -128,26 +128,25 @@ function changeRGB(rgb){
 	RGB[0].color = rgb;
 }
 function resetCoords(){
+	const dia2 = dia*0.3
 	coords = [
 		{
-			xy : [mouseX+(0.3*dia), mouseY+(0.3*dia)],
-			dia2 : dia*0.3
+		dia2 : dia2
 		},
 		{
-			xy : [mouseX, mouseY],
-			dia2 : dia*0.3
+			xy : [mouseX+(dia2), mouseY+(dia2)]
 		},
 		{
-			xy : [mouseX-(0.3*dia), mouseY-(0.3*dia)],
-			dia2 : dia*0.3
+			xy : [mouseX, mouseY]
 		},
 		{
-			xy : [mouseX+(0.3*dia), mouseY-(0.3*dia)],
-			dia2 : dia*0.3
+			xy : [mouseX-(dia2), mouseY-(dia2)]
 		},
 		{
-			xy : [mouseX-(0.3*dia), mouseY+(0.3*dia)],
-			dia2 : dia*0.3
+			xy : [mouseX+(dia2), mouseY-(dia2)]
+		},
+		{
+			xy : [mouseX-(dia2), mouseY+(dia2)]
 		}
 	]
 }

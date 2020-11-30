@@ -18,11 +18,18 @@ function newConnection(socket){
 socket.on('draw', drawEvent);
 socket.on('draw3', draw3Event);
 function draw3Event(draw3Data){
+if(draw3Data.coords[0].dia2 > 75){
+   draw3Data.coords[0].dia2 = 75;
+}
+
 
         socket.broadcast.emit('draw3', draw3Data)
 
 }
 function drawEvent(drawData){
+    if(drawData.dia > 250){
+        drawData.dia = 250;
+    }
     socket.broadcast.emit('draw', drawData);
 }
 
