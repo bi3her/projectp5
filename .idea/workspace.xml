@@ -63,7 +63,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1606585167304</updated>
-      <workItem from="1606585169441" duration="42587000" />
+      <workItem from="1606585169441" duration="46035000" />
+      <workItem from="1606844460383" duration="2462000" />
+      <workItem from="1607027933854" duration="823000" />
     </task>
     <task id="LOCAL-00001" summary="final commit">
       <created>1606638893414</created>
@@ -124,6 +126,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="312" y="162" key="Vcs.Push.Dialog.v2/0.0.1440.860@0.0.1440.860" timestamp="1606742431442" />
+    <state x="537" y="343" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606844770858">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="537" y="343" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.860@0.0.1440.860" timestamp="1606844770858" />
     <state x="376" y="190" key="run.anything.popup" timestamp="1606741935114">
       <screen x="0" y="0" width="1440" height="860" />
     </state>

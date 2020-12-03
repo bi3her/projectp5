@@ -21,7 +21,8 @@ let socket;
 let colorfulMode = false;
 function setup() {
 	createCanvas(windowWidth, windowHeight);
-	background(50, 255, 50)
+	background(50, 255, 50);
+	
 socket = io();
 
 	socket.on('draw', newDrawing);
